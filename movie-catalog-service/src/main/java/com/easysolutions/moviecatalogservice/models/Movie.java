@@ -1,4 +1,4 @@
-package com.easysolutions.movieinfoservice.models;
+package com.easysolutions.moviecatalogservice.models;
 
 public class Movie {
 

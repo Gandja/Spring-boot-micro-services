@@ -1,4 +1,4 @@
-package com.easysolutions.ratingsdataservice.models;
+package com.easysolutions.moviecatalogservice.models;
 
 public class Rating {
 
