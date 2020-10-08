@@ -3,6 +3,7 @@ package com.easysolutions.moviecatalogservice.resources;
 import com.easysolutions.moviecatalogservice.models.Catalog;
 import com.easysolutions.moviecatalogservice.models.Movie;
 import com.easysolutions.moviecatalogservice.models.Rating;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,10 +17,12 @@ import java.util.stream.Collectors;
 @RequestMapping("/catalog")
 public class MovieCatalogResource {
 
+    @Autowired
+    RestTemplate restTemplate;
+
     @RequestMapping("/{userId}")
     public List<Catalog> getCatalog(@PathVariable("userId") String userId) {
 
-        RestTemplate restTemplate = new RestTemplate();
         List<Rating> ratings = Arrays.asList(
                 new Rating("1", 5),
                 new Rating("2", 7)
